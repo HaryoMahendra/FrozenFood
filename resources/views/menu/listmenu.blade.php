@@ -1,111 +1,67 @@
 @extends('layouts.app')
+
 @section('content')
-<div class="w-full h-full bg-rose-100/30 dark:bg-[#1b1b1b] py-16">
-  <div class="max-w-6xl mx-auto flex flex-col justify-center items-center">
-    <!-- Title -->
-    <p class="pb-2 text-lg lg:text-2xl text-rose-600 font-semibold">Category</p>
-    <h2 class="text-3xl lg:text-5xl text-center font-serif font-semibold mb-12 dark:text-white">
-      Choose Your Best Food
-    </h2>
+    <div class="bg-white">
 
-    <!-- Cards -->
-    <div class="flex flex-wrap gap-8 justify-center items-center">
-      <!-- Card 1 -->
-      <div
-        class="group w-[18rem] sm:w-[20rem] bg-white dark:bg-[#262525] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img
-          class="w-full h-[14rem] object-cover"
-          src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-          alt="Sushi"
-        />
-        <div class="p-5">
-          <h2 class="text-2xl font-semibold mb-1 group-hover:text-rose-600 dark:text-white">Sushi Delight</h2>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">Salmon, Rice & Avocado</p>
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex -space-x-3">
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/68.jpg" alt="" />
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/45.jpg" alt="" />
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/52.jpg" alt="" />
+        {{-- Hero Section --}}
+        <header
+            class="relative overflow-hidden pt-28 pb-20 bg-gradient-to-br from-sky-300 via-sky-500 to-sky-600 text-white text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Daftar Menu</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg font-light">Pilih jenis olahan yang kamu inginkan.</p>
+        </header>
+
+        {{-- Filter --}}
+        <div class="bg-gradient-to-br from-sky-50 via-sky-100 to-white py-6 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    @foreach (['Semua', 'Ikan', 'Ayam', 'Ceker', 'Tempe', 'Hati/Ampela', 'Lainnya'] as $filter)
+                        <button
+                            class="px-4 py-2 bg-white border border-sky-500 text-sky-600 rounded-full font-medium hover:bg-sky-500 hover:text-white transition duration-300">
+                            {{ $filter }}
+                        </button>
+                    @endforeach
+                </div>
             </div>
-            <div class="flex items-center text-yellow-500 text-xl font-bold">
-              <ion-icon name="star"></ion-icon>
-              <span class="text-black dark:text-white ml-1">4.9</span>
-            </div>
-          </div>
-          <button
-            class="w-full py-2 border border-rose-600 dark:border-gray-500 text-rose-700 dark:text-white rounded-full uppercase font-bold transition duration-300 hover:bg-rose-600 hover:text-white dark:hover:bg-white dark:hover:text-black">
-            Order now
-          </button>
         </div>
-      </div>
 
-      <!-- Card 2 -->
- <div
-  class="group w-[18rem] sm:w-[20rem] bg-white dark:bg-[#262525] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-   <img
-          class="w-full h-[14rem] object-cover"
-          src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-          alt="Sushi"
-        />
-  <div class="p-5">
-    <h2 class="text-2xl font-semibold mb-1 group-hover:text-rose-600 dark:text-white">Creamy Pasta</h2>
-    <p class="text-gray-700 dark:text-gray-300 mb-4">Cream, Cheese & Basil</p>
-    <div class="flex items-center justify-between">
-      <div class="flex -space-x-3">
-        <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/11.jpg" alt="">
-        <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/12.jpg" alt="">
-        <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/13.jpg" alt="">
-      </div>
-      <span class="flex items-center text-yellow-500 font-semibold text-lg">
-        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.186 3.655a1 1 0 00.95.69h3.813c.969 0 1.371 1.24.588 1.81l-3.087 2.24a1 1 0 00-.364 1.118l1.186 3.655c.3.921-.755 1.688-1.54 1.118l-3.087-2.24a1 1 0 00-1.175 0l-3.087 2.24c-.785.57-1.84-.197-1.54-1.118l1.186-3.655a1 1 0 00-.364-1.118L2.421 9.082c-.783-.57-.38-1.81.588-1.81h3.813a1 1 0 00.95-.69l1.186-3.655z"/>
-        </svg>
-        4.8
-      </span>
-    </div>
-    <button
-      class="mt-4 w-full border border-rose-500 text-rose-500 hover:bg-rose-500 hover:text-white font-semibold py-2 px-4 rounded-full transition duration-300">
-      ORDER NOW
-    </button>
-  </div>
-</div>
-
-
-      <!-- Card 3 -->
-      <div
-        class="group w-[18rem] sm:w-[20rem] bg-white dark:bg-[#262525] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-         <img
-          class="w-full h-[14rem] object-cover"
-          src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
-          alt="Sushi"
-        />
-
-        <div class="p-5">
-          <h2 class="text-2xl font-semibold mb-1 group-hover:text-rose-600 dark:text-white">Chocolate Bliss</h2>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">Dark Chocolate & Cream</p>
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex -space-x-3">
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/25.jpg" alt="" />
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/21.jpg" alt="" />
-              <img class="w-9 h-9 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/62.jpg" alt="" />
+        {{-- Menu List --}}
+        <div class="bg-gradient-to-br from-sky-50 via-sky-100 to-white py-10">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    @foreach ([
+                      ['title' => 'Lele Mangut', 'desc' => 'Ikan lele dengan bumbu kuning yang lezat', 'img' => asset('asset/mangutlele.jpg'), 'rating' => '4.9'],
+                      ['title' => 'Rica-Rica Ceker', 'desc' => 'Ceker ayam dengan bumbu pedas dan gurih', 'img' => asset('asset/ricaceker.avif'), 'rating' => '4.8'],
+                      ['title' => 'Rica-Rica Ayam', 'desc' => 'Daging ayam dengan bumbu pedas dan gurih', 'img' => asset('asset/ricadagingayam.jpg'), 'rating' => '5.0'],
+                      ['title' => 'Kering Tempe', 'desc' => 'Tempe yang dikeringkan dengan bumbu yang gurih', 'img' => asset('asset/keringtempe.jpg'), 'rating' => '4.7'],
+                      ['title' => 'Balado Teri dan Kacang', 'desc' => 'Balado teri dengan kacang renyah', 'img' => asset('asset/baladoteridankacang.jpg'), 'rating' => '4.6'],
+                      ['title' => 'Panas Hati dan Ampela', 'desc' => 'Ampela pedas dengan sambal khas', 'img' => asset('asset/panashatiampela.webp'), 'rating' => '4.5'],
+                      ['title' => 'Krengsengan Hati dan Ampela', 'desc' => 'Krengsengan pedas khas Jawa', 'img' => asset('asset/krengsenganhatiampela.jpg'), 'rating' => '4.4'],
+                      ['title' => 'Rendang Ayam', 'desc' => 'Rendang ayam empuk khas Minang', 'img' => asset('asset/rendangayam.webp'), 'rating' => '4.3'],
+                      ['title' => 'Garang Asem', 'desc' => 'Olahan ayam dengan kuah asam segar', 'img' => asset('asset/garangasem.jpg'), 'rating' => '4.2'],
+                      ['title' => 'Aneka Olahan Lainnya', 'desc' => 'Kreasi menu lainnya siap disajikan', 'img' => asset('asset/'), 'rating' => '4.1'],
+                    ] as $menu)
+                        <div
+                            class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <img class="w-full h-48 object-cover" src="{{ $menu['img'] }}" alt="{{ $menu['title'] }}" />
+                            <div class="p-5">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-1">{{ $menu['title'] }}</h3>
+                                <p class="text-gray-600 text-sm mb-3">{{ $menu['desc'] }}</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center text-yellow-500 font-medium text-sm">
+                                        <i class="fas fa-star mr-1"></i>
+                                        <span class="text-gray-800">{{ $menu['rating'] }}</span>
+                                    </div>
+                                </div>
+                                <button
+                                    class="w-full py-2 border border-sky-500 text-sky-600 rounded-full font-semibold transition duration-300 hover:bg-sky-500 hover:text-white">
+                                    Pesan Sekarang
+                                </button>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-            <div class="flex items-center text-yellow-500 text-xl font-bold">
-              <ion-icon name="star"></ion-icon>
-              <span class="text-black dark:text-white ml-1">5.0</span>
-            </div>
-          </div>
-          <button
-            class="w-full py-2 border border-rose-600 dark:border-gray-500 text-rose-700 dark:text-white rounded-full uppercase font-bold transition duration-300 hover:bg-rose-600 hover:text-white dark:hover:bg-white dark:hover:text-black">
-            Order now
-          </button>
         </div>
-      </div>
+
     </div>
-  </div>
-</div>
-
-<!-- Ionicons -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 @endsection

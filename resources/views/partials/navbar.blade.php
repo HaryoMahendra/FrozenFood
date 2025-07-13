@@ -8,6 +8,7 @@
          <div class="hidden md:flex space-x-8 font-medium">
              <a href="{{ url('/') }}" class="hover:text-sky-500 transition">Home</a>
              <a href="{{ route('tentang') }}" class="hover:text-sky-500 transition">Tentang</a>
+             <a href="{{ route('listmenu') }}" class="hover:text-sky-500 transition">Menu</a>
              <a href="{{ route('kontak') }}" class="hover:text-sky-500 transition">Kontak</a>
          </div>
 
@@ -46,7 +47,7 @@
                  <i class="fas fa-moon text-gray-700"></i>
              </div>
              <!-- User Profile -->
-             <a href="#" class="hover:text-sky-500 transition">
+             <a href="{{ route('view') }}" class="hover:text-sky-500 transition">
                  <i class="fas fa-user text-lg"></i>
              </a>
              <button class="md:hidden focus:outline-none" id="menuButton">

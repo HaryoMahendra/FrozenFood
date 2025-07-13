@@ -29,4 +29,8 @@ Route::get('/listmenu', function () {
     return view('menu.listmenu');
 })->name('listmenu');
 
+Route::get('/view', function () {
+    return view('profile.view');
+})->name('view');
+
 
